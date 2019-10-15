@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ResourceList } from './ResourceList'
 
 const todos = [
@@ -34,20 +34,17 @@ const todos = [
   }
 ]
 
-class App extends React.Component {
-  state = { resource: 'todos' }
-  changeResource = resource => this.setState({ resource })
-  render() {
-    return (
+const App = () => {
+  const [resource, setResource] = useState('posts')
+  return (
+    <div>
       <div>
-        <div>
-          <button onClick={() => this.changeResource('posts')}>Posts</button>
-          <button onClick={() => this.changeResource('todos')}>Todos</button>
-        </div>
-        <ResourceList resources={todos} />
+        <button onClick={() => setResource('posts')}>Posts</button>
+        <button onClick={() => setResource('todos')}>Todos</button>
       </div>
-    )
-  }
+      <ResourceList resources={todos} />
+    </div>
+  )
 }
 
 export default App
