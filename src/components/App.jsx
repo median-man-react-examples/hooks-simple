@@ -35,12 +35,14 @@ const todos = [
 ]
 
 class App extends React.Component {
+  state = { resource: 'todos' }
+  changeResource = resource => this.setState({ resource })
   render() {
     return (
       <div>
         <div>
-          <button>Posts</button>
-          <button>Todos</button>
+          <button onClick={() => this.changeResource('posts')}>Posts</button>
+          <button onClick={() => this.changeResource('todos')}>Todos</button>
         </div>
         <ResourceList resources={todos} />
       </div>
