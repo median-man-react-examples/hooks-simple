@@ -1,4 +1,5 @@
 import React from 'react'
+import { ResourceList } from './ResourceList'
 
 const todos = [
   {
@@ -41,11 +42,7 @@ class App extends React.Component {
           <button>Posts</button>
           <button>Todos</button>
         </div>
-        <ul>
-          {todos.map(({ title }) => (
-            <li>{title}</li>
-          ))}
-        </ul>
+        <ResourceList resources={todos} />
       </div>
     )
   }
