@@ -1,9 +1,5 @@
 import React from 'react'
 
-export const ResourceList = ({ resources }) => (
-  <ul>
-    {resources.map(({ title }) => (
-      <li>{title}</li>
-    ))}
-  </ul>
+export const ResourceList = ({ resource }) => (
+  <div>ResourceList: {resource}</div>
 )
